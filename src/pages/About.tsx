@@ -1,5 +1,5 @@
-
 import SectionHeader from "@/components/common/SectionHeader";
+import TeamMember from "@/components/common/TeamMember";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
@@ -7,16 +7,18 @@ import { Linkedin } from "lucide-react";
 const About = () => {
   const teamMembers = [
     {
-      name: "Jane Smith",
-      role: "Founder & Creative Director",
-      bio: "With over 15 years of experience in branding and marketing, Jane leads our creative team with passion and innovation.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      name: "Niyaj Tamboli",
+      role: "Co-founder",
+      bio: "Leading our creative vision with extensive experience in branding and digital marketing.",
+      image: "/lovable-uploads/21784bb1-5b4f-468e-a7f7-75f849772ddb.png",
+      linkedinUrl: "https://www.linkedin.com/in/niyaj-tamboli-25139410/"
     },
     {
-      name: "Michael Johnson",
-      role: "Digital Marketing Specialist",
-      bio: "Michael brings expertise in digital strategy and social media marketing to help our clients build effective online presences.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
+      name: "Arbaj Butler",
+      role: "Co-founder",
+      bio: "Driving innovation and strategic growth in digital marketing and brand development.",
+      image: "/lovable-uploads/7bc22ca8-219c-4e94-a943-8163fe02e4e4.png",
+      linkedinUrl: "https://www.linkedin.com/in/arbaj-butler-a7646918a/"
     },
   ];
   
@@ -88,37 +90,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Meet Our Co-founders */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <SectionHeader 
-            title="Meet Our Team" 
+            title="Meet Our Co-founders" 
             subtitle="The passionate experts behind Creotion's creative solutions."
             center
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-64 object-cover object-center" 
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-creotion-orange mb-3">{member.role}</p>
-                  <p className="text-gray-600 mb-4">{member.bio}</p>
-                  <a 
-                    href="https://www.linkedin.com/company/creotion-branding-digital-marketing" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="inline-flex items-center text-gray-600 hover:text-creotion-orange"
-                  >
-                    <Linkedin size={18} className="mr-2" /> LinkedIn
-                  </a>
-                </div>
-              </div>
+              <TeamMember key={index} {...member} />
             ))}
           </div>
         </div>

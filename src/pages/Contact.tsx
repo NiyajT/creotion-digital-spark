@@ -12,7 +12,6 @@ import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "luc
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import SectionHeader from "@/components/common/SectionHeader";
-import TeamMember from "@/components/common/TeamMember";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -59,23 +58,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-
-  const teamMembers = [
-    {
-      name: "Niyaj Tamboli",
-      role: "Co-founder",
-      bio: "Leading our creative vision with extensive experience in branding and digital marketing.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      linkedinUrl: "https://www.linkedin.com/in/niyaj-tamboli-25139410/"
-    },
-    {
-      name: "Arbaj Butler",
-      role: "Co-founder",
-      bio: "Driving innovation and strategic growth in digital marketing and brand development.",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-      linkedinUrl: "https://www.linkedin.com/in/arbaj-butler-a7646918a/"
-    },
-  ];
 
   return (
     <>
@@ -265,23 +247,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <SectionHeader 
-            title="Meet Our Co-founders" 
-            subtitle="The passionate experts behind Creotion's creative solutions."
-            center
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <TeamMember key={index} {...member} />
-            ))}
           </div>
         </div>
       </section>
