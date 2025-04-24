@@ -75,9 +75,9 @@ const Home = () => {
             </div>
             <div className="animate-slide-up hidden lg:block">
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Digital Marketing" 
-                className="rounded-lg shadow-xl" 
+                src="/lovable-uploads/eef9a923-7d2d-42e2-b31d-440c8ba42db6.png" 
+                alt="Strategic Brand Development" 
+                className="rounded-lg shadow-xl object-cover w-full h-full" 
               />
             </div>
           </div>
