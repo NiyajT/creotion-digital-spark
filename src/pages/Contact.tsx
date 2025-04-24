@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import SectionHeader from "@/components/common/SectionHeader";
 import TeamMember from "@/components/common/TeamMember";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { toast } = useToast();
