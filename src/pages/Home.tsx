@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/common/SectionHeader";
+import HeroSlider from "@/components/home/HeroSlider";
 
 const Home = () => {
   const services = [
@@ -53,35 +53,9 @@ const Home = () => {
   
   return (
     <>
-      {/* Hero Section */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-24">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Elevate Your <span className="gradient-text">Digital Presence</span> With Creative Solutions
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8">
-                We help businesses build strong digital identities and connect authentically with their audience through strategic branding and engaging content.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-gradient-orange hover:opacity-90">
-                  <Link to="/services">Explore Services</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">Contact Us</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="animate-slide-up hidden lg:block">
-              <img 
-                src="/lovable-uploads/eef9a923-7d2d-42e2-b31d-440c8ba42db6.png" 
-                alt="Strategic Brand Development" 
-                className="rounded-lg shadow-xl object-cover w-full h-full" 
-              />
-            </div>
-          </div>
-        </div>
+      {/* Hero Section with Slider */}
+      <section className="-mt-20">
+        <HeroSlider />
       </section>
       
       {/* Services Section */}
