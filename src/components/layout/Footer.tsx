@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
@@ -8,8 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div>
             <Link to="/">
               <img 
                 src="/lovable-uploads/aff7e86f-c0f9-49a9-bdb8-7f1dff8f6753.png" 
@@ -22,7 +20,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.facebook.com" 
+                href="https://www.facebook.com/creotion.agency" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-creotion-orange transition-colors"
@@ -31,7 +29,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://www.instagram.com" 
+                href="https://www.instagram.com/creotion_/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-creotion-orange transition-colors"
@@ -48,14 +46,48 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
+            </div>
+          </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/aff7e86f-c0f9-49a9-bdb8-7f1dff8f6753.png" 
+                alt="Creotion Logo" 
+                className="h-10 mb-4" 
+              />
+            </Link>
+            <p className="text-gray-600 mb-4">
+              Creotion is a dynamic branding agency driven by passionate experts, specializing in crafting impactful social media strategies, engaging content, and powerful brand stories.
+            </p>
+            <div className="flex space-x-4">
               <a 
-                href="https://www.youtube.com" 
+                href="https://www.facebook.com/creotion.agency" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-creotion-orange transition-colors"
-                aria-label="YouTube"
+                aria-label="Facebook"
               >
-                <Youtube size={20} />
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://www.instagram.com/creotion_/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-creotion-orange transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/creotion-branding-digital-marketing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-creotion-orange transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -104,15 +136,23 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone size={20} className="mr-3 text-creotion-orange flex-shrink-0 mt-1" />
-                <span className="text-gray-600">+1 (555) 123-4567</span>
+                <div>
+                  <span className="text-gray-600">+91 7709578480</span><br />
+                  <span className="text-gray-600">+91 96046 80374</span>
+                </div>
               </li>
               <li className="flex items-start">
                 <Mail size={20} className="mr-3 text-creotion-orange flex-shrink-0 mt-1" />
-                <span className="text-gray-600">contact@creotion.com</span>
+                <span className="text-gray-600">info.creotion@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={20} className="mr-3 text-creotion-orange flex-shrink-0 mt-1" />
-                <span className="text-gray-600">123 Business Street, Suite 100<br />Marketing City, MC 12345</span>
+                <span className="text-gray-600">
+                  Plot No. 14, Old Budhgaon Rd,<br />
+                  in front of Shanti Niketan School,<br />
+                  Chavan Colony, Sangli,<br />
+                  Sangli Miraj Kupwad, Maharashtra 416416
+                </span>
               </li>
               <li>
                 <a 

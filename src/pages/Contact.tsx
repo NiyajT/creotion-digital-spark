@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +12,7 @@ import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "luc
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import SectionHeader from "@/components/common/SectionHeader";
+import TeamMember from "@/components/common/TeamMember";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -58,7 +58,24 @@ const Contact = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-  
+
+  const teamMembers = [
+    {
+      name: "Niyaj Tamboli",
+      role: "Co-founder",
+      bio: "Leading our creative vision with extensive experience in branding and digital marketing.",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      linkedinUrl: "https://www.linkedin.com/in/niyaj-tamboli-25139410/"
+    },
+    {
+      name: "Arbaj Butler",
+      role: "Co-founder",
+      bio: "Driving innovation and strategic growth in digital marketing and brand development.",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      linkedinUrl: "https://www.linkedin.com/in/arbaj-butler-a7646918a/"
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -179,7 +196,8 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-creotion-orange mr-4 mt-1" />
                   <div>
                     <h3 className="font-medium mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+91 7709578480</p>
+                    <p className="text-gray-600">+91 96046 80374</p>
                   </div>
                 </div>
                 
@@ -187,7 +205,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5 text-creotion-orange mr-4 mt-1" />
                   <div>
                     <h3 className="font-medium mb-1">Email</h3>
-                    <p className="text-gray-600">contact@creotion.com</p>
+                    <p className="text-gray-600">info.creotion@gmail.com</p>
                   </div>
                 </div>
                 
@@ -196,8 +214,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium mb-1">Office Location</h3>
                     <p className="text-gray-600">
-                      123 Business Street, Suite 100<br />
-                      Marketing City, MC 12345
+                      Plot No. 14, Old Budhgaon Rd,<br />
+                      in front of Shanti Niketan School,<br />
+                      Chavan Colony, Sangli,<br />
+                      Sangli Miraj Kupwad, Maharashtra 416416
                     </p>
                     <a 
                       href="https://g.co/kgs/SEynhfC"
@@ -214,7 +234,7 @@ const Contact = () => {
                   <h3 className="font-medium mb-3">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://www.facebook.com" 
+                      href="https://www.facebook.com/creotion.agency" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-gray-100 p-3 rounded-full text-gray-600 hover:text-creotion-orange transition-colors"
@@ -223,7 +243,7 @@ const Contact = () => {
                       <Facebook size={20} />
                     </a>
                     <a 
-                      href="https://www.instagram.com" 
+                      href="https://www.instagram.com/creotion_/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-gray-100 p-3 rounded-full text-gray-600 hover:text-creotion-orange transition-colors"
@@ -240,15 +260,6 @@ const Contact = () => {
                     >
                       <Linkedin size={20} />
                     </a>
-                    <a 
-                      href="https://www.youtube.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="bg-gray-100 p-3 rounded-full text-gray-600 hover:text-creotion-orange transition-colors"
-                      aria-label="YouTube"
-                    >
-                      <Youtube size={20} />
-                    </a>
                   </div>
                 </div>
               </div>
@@ -256,7 +267,24 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      
+
+      {/* Team Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <SectionHeader 
+            title="Meet Our Co-founders" 
+            subtitle="The passionate experts behind Creotion's creative solutions."
+            center
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <TeamMember key={index} {...member} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
@@ -295,6 +323,19 @@ const Contact = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-orange text-white py-16">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Brand?</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Let's collaborate to create a powerful brand presence that connects with your audience and drives business growth.
+          </p>
+          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-creotion-orange">
+            <Link to="/contact">Get in Touch Today</Link>
+          </Button>
         </div>
       </section>
     </>
