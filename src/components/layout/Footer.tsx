@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
@@ -7,48 +8,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container-custom">
-        <div>
-            <Link to="/">
-              <img 
-                src="/lovable-uploads/aff7e86f-c0f9-49a9-bdb8-7f1dff8f6753.png" 
-                alt="Creotion Logo" 
-                className="h-10 mb-4" 
-              />
-            </Link>
-            <p className="text-gray-600 mb-4">
-              Creotion is a dynamic branding agency driven by passionate experts, specializing in crafting impactful social media strategies, engaging content, and powerful brand stories.
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/creotion.agency" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-creotion-orange transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="https://www.instagram.com/creotion_/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-creotion-orange transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://www.linkedin.com/company/creotion-branding-digital-marketing" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-creotion-orange transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div>
-          </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <Link to="/">
