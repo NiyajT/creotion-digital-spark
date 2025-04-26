@@ -9,16 +9,16 @@ import {
 
 const slides = [
   {
-    image: "/lovable-uploads/f184c3b1-40e7-411a-b113-abf9473cad2f.png"
+    image: "./lovable-uploads/f184c3b1-40e7-411a-b113-abf9473cad2f.png"
   },
   {
-    image: "/lovable-uploads/6ddc6f74-e6ad-4566-8249-447bf058019d.png"
+    image: "./lovable-uploads/6ddc6f74-e6ad-4566-8249-447bf058019d.png"
   },
   {
-    image: "/lovable-uploads/104b6245-3ce9-47cf-852c-2612224ceb1c.png"
+    image: "./lovable-uploads/104b6245-3ce9-47cf-852c-2612224ceb1c.png"
   },
   {
-    image: "/lovable-uploads/52dca639-266a-49fe-92db-8aaceaef8df4.png"
+    image: "./lovable-uploads/52dca639-266a-49fe-92db-8aaceaef8df4.png"
   }
 ];
 
