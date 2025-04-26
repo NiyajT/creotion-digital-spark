@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-4">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/aff7e86f-c0f9-49a9-bdb8-7f1dff8f6753.png" 
+              src="./lovable-uploads/aff7e86f-c0f9-49a9-bdb8-7f1dff8f6753.png" 
               alt="Creotion Logo" 
               className="h-8 md:h-10" 
             />
