@@ -1,4 +1,5 @@
 
+import { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const slides = [
   {
@@ -23,8 +25,55 @@ const slides = [
 ];
 
 const HeroSlider = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Preload images before displaying the slider
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const imagePromises = slides.map(slide => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = slide.image;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        });
+        
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+        console.log("All slider images loaded successfully");
+      } catch (error) {
+        console.error("Failed to load slider images:", error);
+        setImagesLoaded(true); // Show anyway, even with errors
+      }
+    };
+    
+    loadImages();
+  }, []);
+
+  // Auto rotate slides
+  useEffect(() => {
+    if (!imagesLoaded) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [imagesLoaded]);
+
+  if (!imagesLoaded) {
+    return (
+      <div className="w-full h-[600px] bg-[#1A1F2C] flex items-center justify-center">
+        <Skeleton className="w-full h-full" />
+      </div>
+    );
+  }
+
   return (
-    <Carousel className="w-full bg-[#1A1F2C]">
+    <Carousel className="w-full bg-[#1A1F2C]" selectedIndex={activeIndex} onSelect={setActiveIndex}>
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
@@ -33,13 +82,14 @@ const HeroSlider = () => {
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-4" />
-      <CarouselNext className="right-4" />
+      <CarouselPrevious className="left-4" onClick={() => setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length)} />
+      <CarouselNext className="right-4" onClick={() => setActiveIndex((prev) => (prev + 1) % slides.length)} />
     </Carousel>
   );
 };
